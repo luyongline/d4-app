@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"><title>D4 V3.3 模拟盘 · 固定入口</title>
+<style>body{font-family:"Microsoft YaHei",sans-serif;background:#f5f7fa;display:flex;
+justify-content:center;align-items:center;height:100vh;margin:0;color:#333}
+.box{text-align:center;padding:40px;background:#fff;border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,.08)}
+h1{font-size:20px;margin:0 0 10px}p{color:#666;font-size:14px}a{display:inline-block;margin-top:16px;
+padding:10px 26px;background:#2575fc;color:#fff;border-radius:8px;text-decoration:none;font-size:14px}</style>
+</head><body><div class="box">
+<h1>💹 D4 V3.3 模拟盘</h1>
+<p>正在连接实时服务…（更新于 2026-10-31 11:28）</p>
+<p><a id="live" href="https://3d2e8cca999e19.lhr.life/模拟盘/D4_V3.3_模拟盘.html">进入实时模拟盘</a> &nbsp;
+<a href="snapshot.html" style="background:#6a11cb">查看云端快照</a></p>
+</div>
+<script>
+const LIVE = "https://3d2e8cca999e19.lhr.life/模拟盘/D4_V3.3_模拟盘.html";
+const ctrl = new AbortController();
+setTimeout(() => ctrl.abort(), 2500);
+fetch(LIVE, {mode:'no-cors', signal:ctrl.signal}).then(() => location.replace(LIVE))
+ .catch(() => location.replace('snapshot.html'));
+</script></body></html>
